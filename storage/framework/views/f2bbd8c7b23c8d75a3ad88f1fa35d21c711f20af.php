@@ -13,34 +13,34 @@
 </head>
 
 <?php $__env->startSection('body'); ?>
-    <body data-sidebar="dark">
+    <body data-topbar="dark" data-layout="horizontal">
 <?php echo $__env->yieldSection(); ?>
+
     <!-- Begin page -->
     <div id="layout-wrapper">
-        <?php echo $__env->make('layouts.topbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-        <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <?php echo $__env->make('layouts.horizontal', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
             <div class="page-content">
+                <!-- Start content -->
                 <div class="container-fluid">
                     <?php echo $__env->yieldContent('content'); ?>
-                </div>
-                <!-- container-fluid -->
+                </div> <!-- content -->
             </div>
-            <!-- End Page-content -->
             <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </div>
-        <!-- end main content-->
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
     </div>
-    <!-- END layout-wrapper -->
+    <!-- END wrapper -->
 
     <!-- Right Sidebar -->
     <?php echo $__env->make('layouts.right-sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <!-- /Right-bar -->
+    <!-- END Right Sidebar -->
 
-    <!-- JAVASCRIPT -->
     <?php echo $__env->make('layouts.vendor-scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
