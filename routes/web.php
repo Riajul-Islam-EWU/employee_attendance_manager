@@ -26,3 +26,7 @@ Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Language Translation
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
+
+//Google Login
+Route::get('/auth/google', [App\Http\Controllers\GoogleController::class, 'googleRedirect']);
+Route::get('/auth/google/callback', [App\Http\Controllers\GoogleController::class, 'googleCallback']);
